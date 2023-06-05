@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 PS</title>
+    <link rel="stylesheet" href="css/fashion.css"/>
+     <script>
+        window.onload = function (){
+            //menu
+            let menuOpen = document.getElementById('open');
+            let menu = document.getElementsByTagName('nav')[0];
+            let body = document.getElementsByTagName('body')[0];
+
+            let menuClose = document.getElementById('menu_close');
+
+            menu.style.display = 'none';
+            menuOpen.onclick = function () {
+                if (menu.style.display == 'none') {
+                    menu.style.display = 'block';
+                    body.classList.add('bg_on');
+                }
+            }
+
+            menuClose.onclick = function(){
+                if(menu.style.display == 'block'){
+                    menu.style.display = 'none';
+                    body.classList.remove('bg_on');
+                }
+            }
+            // 2차메뉴
+            let depth01 = document.getElementsByClassName('depth01');
+            let depth02 = document.getElementsByClassName('depth02');
+
+            //⭐⭐depth02한테 display:none 따로 해줘야됨
+            for(let i = 0; i < depth02.length; i++){
+                depth02[i].style.display = 'none';
+            }
+
+            for(let i = 0;i < depth01.length;i++) {
+                console.log(depth01[i].children);
+                
+                let depth02Chidren = depth01[i].children[1];
+                
+                depth01[i].onclick = function(){
+                    if(depth02Chidren.style.display == 'none') {
+                        depth02Chidren.style.display = 'block';
+                        depth01[i].style.color = '#E79090';
+                    }else if(depth02Chidren.style.display == 'block'){
+                        depth02Chidren.style.display = 'none';
+                        depth01[i].style.color = '#000000';
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="https://mentoswon.github.io/3CE/">
+                    <img src="img/logo_3ce22.png" alt="로고"/>
+                </a>
+            </h1>
+            <div class="menu_icon">
+                <img src="img/search-black.png" alt="검색"/>
+                <img id="open" src="img/icons8-menu-60-black.png" alt="open"/> 
+            </div> <!-- .menu_icon -->
+            <nav>
+                <div id="menu_close">
+                    <img src="img/icon _close_.png" alt="close"/>
+                </div> <!-- .menu_close end -->
+                <ul class="user">
+                    <li><a href="#">Review</a></li> 
+                    <li><a href="#">Help</a></li> 
+                    <li><a href="#">Login</a></li> 
+                    <li><a href="#">Cart</a></li> 
+                </ul> <!-- .user end -->
+                <ul class="gnb">
+                    <li class="depth01">
+                        <div>
+                            <a href="#">WHAT'S NEW</a>
+                        </div>
+                        <ul class="depth02">
+                            <div class="what's new">
+                                <li><a href="#">공식몰 혜택</a></li>
+                                <li><a href="#">공식몰 듀오 세트</a></li>
+                                <li><a href="#">민니의 두번째 수채화 메이크업</a></li>
+                            </div> <!-- .beauty1 end -->
+                        </ul>
+                    </li> <!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <div>
+                            <a href="#">BEAUTY</a>
+                        </div>
+                        <ul class="depth02">
+                            <div class="beauty1">
+                                <li><a href="#">NEW IN</a></li>
+                                <li><a href="#">BEST</a></li>
+                                <li><a href="#">SPECIAL EDITION</a></li>
+                            </div> <!-- .beauty1 end -->
+
+                            <div class="beauty2">
+                                <li><a href="#">페이스</a></li>
+                                <li><a href="#">립</a></li>
+                                <li><a href="#">아이</a></li>
+                                <li><a href="#">치크</a></li>
+                                <li><a href="#">네일</a></li>
+                            </div> <!-- .beauty1 end -->
+
+                            <div class="beauty3">
+                                <li><a href="#">프래그런스&바디</a></li>
+                            </div> <!-- .beauty1 end -->
+
+                            <div class="beauty4">
+                                <li><a href="#">툴</a></li>
+                                <li><a href="#">액세서리</a></li>
+                            </div> <!-- .beauty1 end -->
+                        </ul> <!-- .depth02 end -->
+                        
+                    </li> <!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <div>
+                            <a href="#">FASHION</a>
+                        </div>
+                        <ul class="depth02">
+                            <div class="fasion1">
+                                <li><a href="#">2023 PS COLLECTION</a></li>
+                                <li><a href="#">2022 FW COLLECTION</a></li>
+                                <li><a href="#">2022 PF COLLECTION</a></li>
+                            </div> <!-- .fasion1 end -->
+
+                            <div class="fasion2">
+                                <li><a href="#">NEW IN</a></li>
+                                <li><a href="#">LOOK BOOK</a></li>
+                            </div> <!-- .fasion1 end -->
+
+                            <div class="fasion3">
+                                <li><a href="#">아우터</a></li>
+                                <li><a href="#">탑</a></li>
+                                <li><a href="#">원피스</a></li>
+                                <li><a href="#">팬츠</a></li>
+                                <li><a href="#">백</a></li>
+                                <li><a href="#">슈즈</a></li>
+                                <li><a href="#">액세서리</a></li>
+                            </div> <!-- .fasion1 end -->
+
+                        </ul> <!-- .depth02 end -->
+                    </li> <!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <div>
+                            <a href="#">ABOUT 3CE</a>
+                        </div>
+                    </li> <!-- .depth01 end -->
+                </ul> <!-- .gnb end -->
+            </nav>
+        </div> <!-- .inner end -->
+    </header>
+
+    <main>
+        <nav>
+            <h2>2023 PS</h2>
+            <ul>
+                <li><a href="#">New in</a></li>
+                <li><a href="#">2023 PS</a></li>
+                <li><a href="#">2022 FW</a></li>
+                <li><a href="#">2022 PF</a></li>
+                <li><a href="#">2022 SS</a></li>
+                <li><a href="#">Look Book</a></li>
+                <li><a href="#">아우터</a></li>
+                <li><a href="#">탑</a></li>
+                <li><a href="#">원피스</a></li>
+                <li><a href="#">스커트</a></li>
+                <li><a href="#">팬츠</a></li>
+                <li><a href="#">백</a></li>
+                <li><a href="#">슈즈</a></li>
+                <li><a href="#">액세서리</a></li>
+            </ul>
+            <div>
+                <div class="title">
+                    <h3>Fashion</h3>
+                    <img src="img/arrow_right.png" alt="화살표"/>
+                    <h3>2023 PS</h3>
+                </div>
+                <ul>
+                    <li><a href="#">신상품</a></li>
+                    <li><a href="#">상품명</a></li>
+                    <li><a href="#">낮은 가격</a></li>
+                    <li><a href="#">높은 가격</a></li>
+                    <li><a href="#">인기상품</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="inner">
+            <div class="list">
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img01.jpg" alt="ps 1">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>포멀딥체크 크롭핏자켓</h4>
+                        <strong>172,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img02.jpg" alt="ps 2">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>포멀딥체크 포켓롱스커트</h4>
+                        <strong>139,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img03.jpg" alt="ps 3">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>레이시텍스처 스트랩미니원피스</h4>
+                        <strong>95,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img04.jpg" alt="ps 4">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>시어서커링클 크롭블라우스</h4>
+                        <strong>49,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img05.jpg" alt="ps 5">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>트리플배색 사선골지가디건</h4>
+                        <strong>66,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img06.jpg" alt="ps 6">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>골지소매배색 사선넥긴팔티</h4>
+                        <strong>43,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img07.gif" alt="ps 7">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>리버시블날염 포인트반팔티</h4>
+                        <strong>32,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+                
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img08.jpg" alt="ps 8">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>앞뒤포켓매치 와이드데님팬츠</h4>
+                        <strong>91,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img09.jpg" alt="ps 9">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>슬림셔링핏 사선넥긴팔티</h4>
+                        <strong>39,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img10.jpg" alt="ps 10">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>사선절개골지 니트베스트탑</h4>
+                        <strong>57,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img11.jpg" alt="ps 11">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>사이드셔링핏 트임롱원피스</h4>
+                        <strong>54,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/ps img12.jpg" alt="ps 12">
+                    </figure>
+                    <div class="text">
+                        <p>2023 PS</p>
+                        <h4>절개A라인 미니원피스</h4>
+                        <strong>118,000원</strong>
+                    </div> <!-- .text end -->
+                    <div class="bottom">
+                        <ul class="color">
+                            <li></li>
+                            <li></li>
+                        </ul> <!-- .color end -->
+                        <div class="icon">
+                            <img src="img/icon _heart_.png" alt="하트">
+                            <img src="img/icon _shopping bag outline_.png" alt="장바구니">
+                        </div> <!-- .icon end -->
+                    </div><!-- .bottom end -->
+                </div> <!-- .item end -->
+            </div> <!-- .list end -->
+        </div> <!-- .inner end -->
+    </main>
+</body>
+</html>
